@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // TODO (9) Call loadWeatherData to perform the network request to get the weather
+        loadWeatherData();
     }
 
     // TODO (8) Create a method that will get the user's preferred location and execute your new AsyncTask and call it loadWeatherData
@@ -93,5 +94,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     // TODO (6) Override the doInBackground method to perform your network requests
-    // TODO (7 Override the onPostExecute method to display the results of the network request
+    // TODO (7) Override the onPostExecute method to display the results of the network request
 }
