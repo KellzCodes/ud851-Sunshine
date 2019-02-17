@@ -45,5 +45,9 @@
     <!--TODO (13) Make the width and height of the ProgressBar 42dp-->
     <!--TODO (14) Set the layout_gravity of the ProgressBar to center-->
     <!--TODO (15) Set the default visibility of the ProgressBar to invisible-->
-
+    <ProgressBar
+        android:id="@+id/pb_loading_indicator"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:visibility="invisible"/>
 </FrameLayout>
