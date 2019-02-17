@@ -15,11 +15,14 @@
  */
 package com.example.android.sunshine;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.utilities.NetworkUtils;
@@ -113,4 +116,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     // TODO (7) Override onOptionsItemSelected to handle clicks on the refresh button
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int menuItemThatWasSelected = item.getItemId();
+        if(menuItemThatWasSelected == R.id.action_search){
+            Context context = MainActivity.this;
+            String message = "Refesh clicked";
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+        }
+        return true;
+    }
 }
