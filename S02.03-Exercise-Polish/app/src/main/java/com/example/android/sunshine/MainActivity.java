@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.android.sunshine.data.SunshinePreferences;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     TextView errorMessageTextView;
 
     // TODO (16) Add a ProgressBar variable to show and hide the progress bar
+    ProgressBar mLoadingIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         errorMessageTextView = findViewById(R.id.error_message_display);
 
         // TODO (17) Find the ProgressBar using findViewById
+        mLoadingIndicator = findViewById(R.id.pb_loading_indicator);
 
         /* Once all of our views are setup, we can load the weather data. */
         loadWeatherData();
@@ -85,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO (18) Within your AsyncTask, override the method onPreExecute and show the loading indicator
 
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mLoadingIndicator.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String[] doInBackground(String... params) {
 
@@ -114,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String[] weatherData) {
             // TODO (19) As soon as the data is finished loading, hide the loading indicator
+            mLoadingIndicator.setVisibility(View.INVISIBLE);
 
             if (weatherData != null) {
                 // TODO (11) If the weather data was not null, make sure the data view is visible
