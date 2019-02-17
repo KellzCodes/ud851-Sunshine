@@ -5,5 +5,5 @@
         android:title="@string/action_refresh"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
-        android:id="@+id/action_search"/>
-</menu>
+        android:id="@+id/action_refresh"/>
+        </menu>

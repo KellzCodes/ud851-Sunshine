@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int menuItemThatWasSelected = item.getItemId();
-        if(menuItemThatWasSelected == R.id.action_search){
+        if(menuItemThatWasSelected == R.id.action_refresh){
             Context context = MainActivity.this;
             String message = "Refesh clicked";
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
